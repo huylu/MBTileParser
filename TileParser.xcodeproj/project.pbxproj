@@ -15,6 +15,7 @@
 		463C65B816D5E85300C4EC51 /* MBGameState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65B716D5E85300C4EC51 /* MBGameState.m */; };
 		463C65BB16D5E8C000C4EC51 /* MBCharacterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */; };
 		463C65BE16D5E8CC00C4EC51 /* MBItemState.m in Sources */ = {isa = PBXBuildFile; fileRef = 463C65BD16D5E8CC00C4EC51 /* MBItemState.m */; };
+		463CFFF01C6D733800F46DAA /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 463CFFEF1C6D733800F46DAA /* Launch.storyboard */; };
 		464AB006192110E80031DA32 /* world-sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 464AB005192110E80031DA32 /* world-sample.json */; };
 		46669B06160F6F5E00CD1197 /* MBDialogTreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */; };
 		46669B0A160F758C00CD1197 /* MBDialogTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 46669B09160F758C00CD1197 /* MBDialogTree.m */; };
@@ -107,6 +108,7 @@
 		463C65BA16D5E8C000C4EC51 /* MBCharacterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBCharacterState.m; path = MBGameEngine/MBGameState/MBCharacterState.m; sourceTree = "<group>"; };
 		463C65BC16D5E8CC00C4EC51 /* MBItemState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBItemState.h; path = MBGameEngine/MBGameState/MBItemState.h; sourceTree = "<group>"; };
 		463C65BD16D5E8CC00C4EC51 /* MBItemState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBItemState.m; path = MBGameEngine/MBGameState/MBItemState.m; sourceTree = "<group>"; };
+		463CFFEF1C6D733800F46DAA /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		464AB005192110E80031DA32 /* world-sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "world-sample.json"; path = "TileParser/Sample Data/Worlds/world-sample.json"; sourceTree = SOURCE_ROOT; };
 		46669B04160F6F5E00CD1197 /* MBDialogTreeNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBDialogTreeNode.h; sourceTree = "<group>"; };
 		46669B05160F6F5E00CD1197 /* MBDialogTreeNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBDialogTreeNode.m; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 		462AABEE15B3EDD20058E14C = {
 			isa = PBXGroup;
 			children = (
+				463CFFEF1C6D733800F46DAA /* Launch.storyboard */,
 				469B754916019E5D00912D26 /* Default-568h@2x.png */,
 				469B754B16019EC700912D26 /* Default.png */,
 				469B754C16019EC700912D26 /* Default@2x.png */,
@@ -631,7 +634,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MB;
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0710;
 				TargetAttributes = {
 					462AABF815B3EDD30058E14C = {
 						DevelopmentTeam = HK64RUWW3P;
@@ -705,6 +708,7 @@
 				4669E0C1160F02F5003BA9B9 /* zack@2x.tps in Resources */,
 				4669E0C2160F02F5003BA9B9 /* zack.plist in Resources */,
 				4669E0C3160F02F5003BA9B9 /* zack.png in Resources */,
+				463CFFF01C6D733800F46DAA /* Launch.storyboard in Resources */,
 				46CD08C01724899B009882D2 /* Sample.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,6 +805,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -828,9 +833,10 @@
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileParser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9AE803BC-3E12-4ABF-92BD-2C954A81D187";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Ad Hoc";
@@ -850,8 +856,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -888,6 +896,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -910,14 +919,15 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileParser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "19C34308-BC65-4C67-9732-06C19B6C4B72";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "19C34308-BC65-4C67-9732-06C19B6C4B72";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -934,6 +944,7 @@
 				GCC_PREFIX_HEADER = "TileParser/TileParser-Prefix.pch";
 				INFOPLIST_FILE = "TileParser/TileParser-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mosheberman.TileParser;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
